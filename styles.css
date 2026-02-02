@@ -1,248 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
-
-:root {
-    --bg-a: #ff6aa2;
-    --bg-b: #ffd6e7;
-    --bg-c: #c7f0ff;
-    --ink: #2a2230;
-    --muted: rgba(42, 34, 48, 0.72);
-    --card: rgba(255, 255, 255, 0.75);
-    --card-strong: rgba(255, 255, 255, 0.88);
-    --stroke: rgba(255, 255, 255, 0.5);
-    --shadow: 0 18px 55px rgba(255, 60, 140, 0.18);
-    --shadow-soft: 0 10px 30px rgba(30, 20, 40, 0.12);
-}
-
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 24px;
-    background:
-        radial-gradient(1200px 700px at 10% 10%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(199, 240, 255, 0.65), rgba(199, 240, 255, 0) 55%),
-        radial-gradient(1000px 700px at 40% 110%, rgba(255, 214, 231, 0.8), rgba(255, 214, 231, 0) 60%),
-        linear-gradient(135deg, var(--bg-a), var(--bg-b));
-    font-family: 'Poppins', sans-serif;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    color: var(--ink);
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 35%),
-        radial-gradient(circle at 80% 55%, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 38%),
-        radial-gradient(circle at 35% 85%, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 35%);
-    filter: blur(0.2px);
-    opacity: 0.85;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9aa2, #ffb7b2, #ffd4d0);
+  min-height: 100vh;
+  color: #333;
+  overflow-x: hidden;
 }
 
 .floating-hearts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.floating-hearts .heart {
-    position: absolute;
-    left: var(--x);
-    top: calc(100% + 30px);
-    font-size: var(--size);
-    opacity: var(--opacity);
-    transform: translate3d(0, 0, 0);
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
-    animation: floatUp var(--dur) linear infinite;
-}
-
-@keyframes floatUp {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(var(--rot));
-    }
-    100% {
-        transform: translate3d(var(--drift), calc(-120vh), 0) rotate(calc(var(--rot) + 35deg));
-    }
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .container {
-    text-align: center;
-    width: min(720px, 100%);
-    background: var(--card);
-    padding: clamp(18px, 4vw, 34px);
-    border-radius: 26px;
-    border: 1px solid var(--stroke);
-    box-shadow: var(--shadow), var(--shadow-soft);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    animation: fadeIn 700ms ease-out;
-    position: relative;
-    z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,182,193,0.4);
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(2.3rem, 5vw, 3.6rem);
-    color: #ff2f7e;
-    margin: 0 0 10px;
-    text-shadow: 0 10px 20px rgba(255, 47, 126, 0.16);
+  font-size: 2.8rem;
+  color: #e85a8c;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 2.1rem;
+  color: #d62839;
+  margin-bottom: 20px;
 }
 
 .subtitle {
-    margin: 0 auto 18px;
-    max-width: 48ch;
-    color: var(--muted);
-    font-size: clamp(1rem, 2.1vw, 1.15rem);
-    line-height: 1.45;
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 32px;
+  line-height: 1.5;
 }
 
 .buttons {
-    margin-top: 18px;
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
 }
 
-.yes-button, .no-button {
-    font-size: 1.15rem;
-    padding: 12px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    user-select: none;
-    position: relative;
+.btn {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.yes-button:focus-visible,
-.no-button:focus-visible {
-    outline: 3px solid rgba(255, 47, 126, 0.35);
-    outline-offset: 3px;
+.yes-btn {
+  background: #ff4d94;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255,77,148,0.4);
 }
 
-.yes-button {
-    background: linear-gradient(135deg, #ff2f7e, #ff6aa2);
-    color: white;
-    box-shadow: 0 12px 28px rgba(255, 47, 126, 0.24);
+.yes-btn:hover {
+  background: #ff3385;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 14px 30px rgba(255,77,148,0.5);
 }
 
-.yes-button::after {
-    content: "  💖";
+.no-btn {
+  background: #e0e0e0;
+  color: #444;
 }
 
-.yes-button:hover {
-    transform: translateY(-1px) scale(1.04);
-    box-shadow: 0 16px 34px rgba(255, 47, 126, 0.32);
+.no-btn:hover {
+  background: #ffcccc;
 }
 
-.yes-button:active {
-    transform: translateY(0) scale(1.02);
+.message {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 30px 0;
+  min-height: 60px;
+  color: #c2185b;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
 }
 
-.no-button {
-    background: linear-gradient(135deg, #ffb1c9, #ffd6e7);
-    color: white;
-    box-shadow: 0 12px 26px rgba(255, 177, 201, 0.3);
-}
-
-.no-button::after {
-    content: "  🙈";
-}
-
-.no-button:hover {
-    transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 16px 34px rgba(255, 177, 201, 0.36);
-}
-
-.no-button:active {
-    transform: translateY(0) scale(1.01);
-}
-
-.no-button.shake {
-    animation: shake 420ms ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-4px); }
-    40% { transform: translateX(4px); }
-    60% { transform: translateX(-3px); }
-    80% { transform: translateX(3px); }
-}
-
-.hint {
-    margin: 14px 0 0;
-    color: rgba(42, 34, 48, 0.6);
-    font-size: 0.95rem;
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gif_container {
-    margin-top: 30px;
-    padding: 14px;
-    background: var(--card-strong);
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  margin: 30px auto;
+  max-width: 320px;
 }
 
 .gif_container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.gif_container img:hover {
-    transform: scale(1.02);
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .footer {
-    margin: 16px 0 0;
-    font-size: 0.95rem;
-    color: rgba(42, 34, 48, 0.65);
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #777;
 }
 
-body.fade-out .container {
-    animation: fadeOut 380ms ease-in forwards;
+/* Floating hearts animation */
+@keyframes float {
+  0%   { transform: translateY(100vh) scale(0.6) rotate(0deg); opacity: 0.6; }
+  100% { transform: translateY(-15vh) scale(1.1) rotate(360deg); opacity: 0; }
 }
 
-@keyframes fadeOut {
-    to { opacity: 0; transform: translateY(10px) scale(0.99); }
+.floating-hearts::before,
+.floating-hearts::after {
+  content: "💗";
+  position: absolute;
+  font-size: 2rem;
+  animation: float 12s infinite linear;
 }
 
-@media (max-width: 768px) {
-    .yes-button, .no-button {
-        width: min(320px, 100%);
-        justify-content: center;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
+.floating-hearts::before { left: 10%; animation-duration: 14s; animation-delay: 0s; }
+.floating-hearts::after  { right: 15%; animation-duration: 17s; animation-delay: 3s; }

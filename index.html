@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <meta name="theme-color" content="#ff6aa2">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Valentine? 💕</title>
+  <meta name="theme-color" content="#ff6aa2">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="floating-hearts" aria-hidden="true"></div>
 
-    <main class="container" role="main">
-        <h1> Tiasha Will you be my Valentine?</h1>
-        <p class="subtitle">I brought love, care, and unlimited hugs.</p>
+  <div class="floating-hearts" aria-hidden="true"></div>
 
-        <div class="buttons" role="group" aria-label="Valentine response">
-            <button class="yes-button" onclick="handleYesClick()">Yes 💘</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
-        </div> 
-        <p class="hint" aria-live="polite"></p>
+  <main class="container">
+    <div class="card">
+      <h1>Tiasha…</h1>
+      <h2>Will you be my Valentine? 💘</h2>
 
-        <div class="gif_container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute animated gif">
-        </div>
+      <p class="subtitle">I come with unlimited hugs, late-night talks, worst jokes, and 100% real feelings 💗</p>
 
-        <p class="footer">Made with extra love 💗 — Maruf</p>
-    </main>
+      <div class="buttons">
+        <button class="btn yes-btn" onclick="sayYes()">Yes! 💕</button>
+        <button class="btn no-btn" id="noBtn">No 😭</button>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="message" id="message" aria-live="polite"></div>
+
+      <div class="gif_container" id="successGif" style="display:none;">
+        <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="happy dancing bear">
+      </div>
+
+      <p class="footer">Made with extra butterflies in my stomach — Maruf 💞</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
